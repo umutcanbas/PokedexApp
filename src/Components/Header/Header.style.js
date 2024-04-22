@@ -11,4 +11,9 @@ export default StyleSheet.create({
     marginVertical:-80,
     padding: 10,
   },
+  innerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+  },
 });
