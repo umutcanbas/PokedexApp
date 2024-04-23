@@ -18,19 +18,19 @@ export default StyleSheet.create({
   },
   textContainer: {
     flexDirection: 'row',
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   name: {
     fontSize: 17,
     fontWeight: 'bold',
-    color:'white'
+    color: 'white',
+    textTransform: 'capitalize',
   },
   id: {
     fontWeight: 'bold',
     fontSize: 17,
-    marginRight:5,
-    color:'white'
-
+    marginRight: 5,
+    color: 'white',
   },
 });
