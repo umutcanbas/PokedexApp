@@ -7,7 +7,7 @@ import {Formik} from 'formik';
 import styles from './Header.style';
 import TextInput from '../TextInput/TextInput';
 
-const Header = ({visible}) => {
+const Header = ({visible }) => {
   const navigation = useNavigation();
 
   const handleFormSubmit = async value => {
