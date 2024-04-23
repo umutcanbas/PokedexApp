@@ -34,6 +34,7 @@ export default StyleSheet.create({
   },
   imageContainer: {
     flexDirection: 'row',
+    backgroundColor: '#fff0f5',
   },
   statContainer: {
     flexDirection: 'column',
@@ -46,11 +47,14 @@ export default StyleSheet.create({
     height: 200,
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 20,
+    margin: 5,
   },
   statsHeader: {
     fontSize: 23,
-
     color: 'red',
+    fontWeight: 'bold',
+
   },
   stat: {
     fontSize: 17,
@@ -71,15 +75,26 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    borderRadius: 30,
+    backgroundColor:'#fff0f5',
   },
 
   typeText: {
+    borderRadius: 10,
+    overflow: 'hidden',
     fontWeight: 'bold',
     fontSize: 20,
     color: 'white',
     padding: 5,
-    margin: 2,
+    margin: 10,
+    marginBottom: 30,
+    textTransform: 'capitalize',
+  },
+  imagePoke: {
+    width: 300,
+    height: 300,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 30,
   },
 
   normal: {

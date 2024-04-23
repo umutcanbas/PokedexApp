@@ -1,4 +1,4 @@
-import {View, Text, Image, SafeAreaView} from 'react-native';
+import {View, Text, Image, SafeAreaView, ImageBackground} from 'react-native';
 import React from 'react';
 
 import styles from './Detail.style';
@@ -22,13 +22,13 @@ const Detail = ({route}) => {
       </Text>
     ));
   }
-
-  let abilityText = '';
+  // ability control
+  /* let abilityText = '';
   if (pokemon.abilities.length === 1) {
     abilityText = pokemon.abilities[0].ability.name;
   } else if (pokemon.abilities.length > 1) {
     abilityText = `${pokemon.abilities[0].ability.name}, ${pokemon.abilities[1].ability.name}`;
-  }
+  } */
 
   return (
     <SafeAreaView style={styles.container}>
@@ -51,13 +51,18 @@ const Detail = ({route}) => {
               {c.stat.name.replace('-', ' ')}: {c.base_stat}
             </Text>
           ))}
+          <Text style={styles.stat}>Height: {pokemon.height}</Text>
+          <Text style={styles.stat}>Weight: {pokemon.weight}</Text>
         </View>
       </View>
 
       <View style={styles.typeTextContainer}>{typeText}</View>
-      <Text>Height: {pokemon.height}</Text>
-      <Text>weight: {pokemon.weight}</Text>
-      <Text>{abilityText}</Text>
+
+      <Image
+        source={require('../../assets/png/Pokeball-11.png')}
+        style={styles.imagePoke}
+        resizeMode="contain"
+      />
     </SafeAreaView>
   );
 };
