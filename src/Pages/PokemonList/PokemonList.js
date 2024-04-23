@@ -7,7 +7,7 @@ import Button from '../../Components/Button/Button';
 
 const charLimit = 20;
 
-const PokemonList = ({navigation}) => {
+const PokemonList = () => {
   const [allPokemons, setAllPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(0);
