@@ -1,3 +1,139 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
-export default StyleSheet.create({})
+const colors = {
+  normal: 'gray',
+  fire: 'red',
+  water: 'blue',
+  electric: 'yellow',
+  grass: 'green',
+  ice: 'lightblue',
+  fighting: 'brown',
+  poison: 'purple',
+  ground: 'sandybrown',
+  flying: 'skyblue',
+  psychic: 'pink',
+  bug: 'green',
+  rock: 'sienna',
+  ghost: 'darkviolet',
+  dragon: 'darkorange',
+  dark: 'black',
+  steel: 'slategray',
+  fairy: 'pink',
+};
+
+export default StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  nameContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginHorizontal: 20,
+  },
+  imageContainer: {
+    flexDirection: 'row',
+  },
+  statContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    marginHorizontal: 20,
+    marginVertical: 10,
+  },
+  image: {
+    width: 200,
+    height: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  statsHeader: {
+    fontSize: 23,
+
+    color: 'red',
+  },
+  stat: {
+    fontSize: 17,
+    textTransform: 'capitalize',
+  },
+  name: {
+    textTransform: 'capitalize',
+    fontWeight: 'bold',
+    fontSize: 17,
+    color: 'black',
+  },
+  id: {
+    fontWeight: 'bold',
+    fontSize: 17,
+    color: 'blue',
+  },
+  typeTextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    borderRadius: 30,
+  },
+
+  typeText: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: 'white',
+    padding: 5,
+    margin: 2,
+  },
+
+  normal: {
+    backgroundColor: colors.normal,
+  },
+  fire: {
+    backgroundColor: colors.fire,
+  },
+  water: {
+    backgroundColor: colors.water,
+  },
+  electric: {
+    backgroundColor: colors.electric,
+  },
+  grass: {
+    backgroundColor: colors.grass,
+  },
+  ice: {
+    backgroundColor: colors.ice,
+  },
+  fighting: {
+    backgroundColorcolor: colors.fighting,
+  },
+  poison: {
+    backgroundColor: colors.poison,
+  },
+  ground: {
+    backgroundColor: colors.ground,
+  },
+  flying: {
+    backgroundColor: colors.flying,
+  },
+  psychic: {
+    backgroundColor: colors.psychic,
+  },
+  bug: {
+    backgroundColor: colors.bug,
+  },
+  rock: {
+    backgroundColor: colors.rock,
+  },
+  ghost: {
+    backgroundColor: colors.ghost,
+  },
+  dragon: {
+    backgroundColor: colors.dragon,
+  },
+  dark: {
+    backgroundColor: colors.dark,
+  },
+  steel: {
+    backgroundColor: colors.steel,
+  },
+  fairy: {
+    backgroundColor: colors.fairy,
+  },
+});
