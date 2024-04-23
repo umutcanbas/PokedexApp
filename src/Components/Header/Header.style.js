@@ -8,12 +8,18 @@ export default StyleSheet.create({
     width: 300,
     height: 300,
     marginHorizontal: 30,
-    marginVertical:-80,
+    marginVertical: -80,
     padding: 10,
   },
   innerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
+  },
+  button: {
+    marginLeft: -30,
+    width: 30,
+    height: 30,
+    justifyContent: 'center',
   },
 });

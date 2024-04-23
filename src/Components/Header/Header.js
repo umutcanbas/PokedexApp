@@ -2,7 +2,7 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 import {useNavigation} from '@react-navigation/native';
-import { Formik } from 'formik';
+import {Formik} from 'formik';
 
 import styles from './Header.style';
 import TextInput from '../TextInput/TextInput';
@@ -20,11 +20,11 @@ const Header = ({visible}) => {
         `https://pokeapi.co/api/v2/pokemon/${value.pokemon}`,
       );
       const data = await response.json();
-      console.log(response.name)
+      console.log(response.name);
       navigation.navigate('DetailPage', data);
       value.pokemon = '';
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -37,25 +37,26 @@ const Header = ({visible}) => {
       />
       <View style={styles.innerContainer}>
         {visible && (
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.goBack()}>
             <Text>{'<'}</Text>
           </TouchableOpacity>
         )}
         {/* Düzgün çalısmıyır */}
-      <Formik initialValues={{pokemon: ''}} onSubmit={handleFormSubmit}>
+        <Formik initialValues={{pokemon: ''}} onSubmit={handleFormSubmit}>
           {({values, handleChange, handleSubmit}) => (
             <TextInput
-            placeholder="Search Pokémon"
-            value={values.pokemon}
-            onType={handleChange('pokemon')}
-            onSubmitEditing={handleSubmit}
+              placeholder="Search Pokémon"
+              value={values.pokemon}
+              onType={handleChange('pokemon')}
+              onSubmitEditing={handleSubmit}
             />
           )}
         </Formik>
-          </View>
+      </View>
     </View>
   );
 };
 
 export default Header;
- 
