@@ -7,16 +7,16 @@ import styles from './PokemonCard.style';
 const PokemonCard = ({pokemon}) => {
   const navigation = useNavigation();
 
-  const goDetail=()=>{
-navigation.navigate('DetailPage',{pokemon})
-  }
+  const goDetail = () => {
+    navigation.navigate('DetailPage', {pokemon});
+  };
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.innerContainer} onPress={goDetail}>
         <Image
           source={{uri: pokemon.sprites.front_default}}
           style={styles.image}
-          resizeMode='contain'
+          resizeMode="contain"
         />
 
         <View style={styles.textContainer}>

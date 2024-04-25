@@ -1,4 +1,4 @@
-import {View, Text, FlatList, TouchableOpacity} from 'react-native';
+import {View, FlatList} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import styles from './PokemonList.style';
 import PokemonCard from '../../Components/PokemonCard/PokemonCard';
