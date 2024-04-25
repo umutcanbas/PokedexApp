@@ -22,4 +22,12 @@ export default StyleSheet.create({
     height: 30,
     justifyContent: 'center',
   },
+
+  filteredPokemon: {
+    textTransform: 'capitalize',
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: '#cd853f',
+    margin: 3,
+  },
 });

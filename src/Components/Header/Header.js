@@ -1,5 +1,5 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 import {useNavigation} from '@react-navigation/native';
 import {Formik} from 'formik';
@@ -7,8 +7,9 @@ import {Formik} from 'formik';
 import styles from './Header.style';
 import TextInput from '../TextInput/TextInput';
 
-const Header = ({visible }) => {
+const Header = ({visible}) => {
   const navigation = useNavigation();
+  const [filteredPokemon, setFilteredPokemon] = useState([]);
 
   const handleFormSubmit = async value => {
     if (!value.pokemon) {
@@ -19,10 +20,27 @@ const Header = ({visible }) => {
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${value.pokemon}`,
       );
+      const pokemon = await response.json();
+      navigation.navigate('DetailPage', {pokemon});
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleFilter = async value => {
+    if (!value.pokemon) {
+      setFilteredPokemon([]);
+      return;
+    }
+    try {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon?offset=0&limit=1000`,
+      );
       const data = await response.json();
-      console.log(response.name);
-      navigation.navigate('DetailPage', data);
-      value.pokemon = '';
+      const filtered = data.results.filter(pokemon =>
+        pokemon.name.startsWith(value.pokemon.toLowerCase()),
+      );
+      setFilteredPokemon(filtered);
     } catch (error) {
       console.log(error);
     }
@@ -43,15 +61,26 @@ const Header = ({visible }) => {
             <Text>{'<'}</Text>
           </TouchableOpacity>
         )}
-        {/* Düzgün çalısmıyır */}
         <Formik initialValues={{pokemon: ''}} onSubmit={handleFormSubmit}>
           {({values, handleChange, handleSubmit}) => (
-            <TextInput
-              placeholder="Search Pokémon"
-              value={values.pokemon}
-              onType={handleChange('pokemon')}
-              onSubmitEditing={handleSubmit}
-            />
+            <View>
+              <TextInput
+                placeholder="Search Pokémon"
+                value={values.pokemon}
+                onType={value => {
+                  handleChange('pokemon')(value);
+                  handleFilter({pokemon: value});
+                }}
+                onSubmitEditing={handleSubmit}
+              />
+              {filteredPokemon.map(pokemon => (
+                <TouchableOpacity
+                  key={pokemon.name}
+                  onPress={() => handleFormSubmit({pokemon: pokemon.name})}>
+                  <Text style={styles.filteredPokemon}>{pokemon.name}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           )}
         </Formik>
       </View>
