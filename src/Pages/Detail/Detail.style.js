@@ -34,7 +34,6 @@ export default StyleSheet.create({
   },
   imageContainer: {
     flexDirection: 'row',
-    backgroundColor: '#fff0f5',
   },
   statContainer: {
     flexDirection: 'column',
@@ -52,16 +51,15 @@ export default StyleSheet.create({
   },
   statsHeader: {
     fontSize: 23,
-    color: 'red',
+    color: '#cd853f',
     fontWeight: 'bold',
-
   },
   stat: {
     fontSize: 17,
     textTransform: 'capitalize',
   },
   name: {
-    textTransform: 'capitalize',
+    textTransform: 'uppercase',
     fontWeight: 'bold',
     fontSize: 17,
     color: 'black',
@@ -75,7 +73,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor:'#fff0f5',
   },
 
   typeText: {
@@ -94,7 +91,7 @@ export default StyleSheet.create({
     height: 300,
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: 30,
+    marginHorizontal: 45,
   },
 
   normal: {
@@ -116,7 +113,7 @@ export default StyleSheet.create({
     backgroundColor: colors.ice,
   },
   fighting: {
-    backgroundColorcolor: colors.fighting,
+    backgroundColor: colors.fighting,
   },
   poison: {
     backgroundColor: colors.poison,

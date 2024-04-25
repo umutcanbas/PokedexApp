@@ -52,7 +52,10 @@ const Detail = ({route}) => {
             </Text>
           ))}
           <Text style={styles.stat}>Height: {pokemon.height}</Text>
-          <Text style={styles.stat}>Weight: {pokemon.weight}</Text>
+          <Text style={styles.stat}>
+            Weight: {pokemon.weight}{' '}
+            <Text style={{textTransform: 'lowercase'}}>lbs</Text>
+          </Text>
         </View>
       </View>
 
