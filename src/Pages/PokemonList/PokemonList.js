@@ -6,6 +6,7 @@ import Header from '../../Components/Header/Header';
 import Button from '../../Components/Button/Button';
 
 const charLimit = 20;
+page = 0;
 
 const PokemonList = () => {
   const [allPokemons, setAllPokemons] = useState([]);
@@ -55,8 +56,10 @@ const PokemonList = () => {
         showsVerticalScrollIndicator={false}
         numColumns={2}
         ListHeaderComponent={<Header />}
+        ListFooterComponent={
+          loadMore ? <Button onPress={handleLoadMore} /> : null
+        }
       />
-      <Button onPress={handleLoadMore} />
     </View>
   );
 };
