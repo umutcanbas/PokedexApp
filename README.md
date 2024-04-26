@@ -1,4 +1,4 @@
-<img src='images/ss.png' height='400' /><img src='images/ss1.png' height='400' /><img src='images/ss2.png' height='400' />
+<img src='images/ss.png' height='400' /> <img src='images/ss1.png' height='400' /> <img src='images/ss2.png' height='400' />
 
 # Technology
 ## React Native
