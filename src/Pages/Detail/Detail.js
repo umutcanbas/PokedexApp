@@ -10,14 +10,10 @@ const Detail = ({route}) => {
   let typeText = '';
   if (pokemon.types.length === 1) {
     const type = pokemon.types[0].type.name;
-    typeText = (
-      <Text style={[styles.typeText, styles[type.toLowerCase()]]}>{type}</Text>
-    );
+    typeText = <Text style={[styles.typeText, styles[type]]}>{type}</Text>;
   } else if (pokemon.types.length > 1) {
     typeText = pokemon.types.map(t => (
-      <Text
-        key={t.type.name}
-        style={[styles.typeText, styles[t.type.name.toLowerCase()]]}>
+      <Text key={t.type.name} style={[styles.typeText, styles[t.type.name]]}>
         {t.type.name}
       </Text>
     ));
@@ -48,13 +44,20 @@ const Detail = ({route}) => {
           <Text style={styles.statsHeader}>Stats</Text>
           {pokemon.stats.map(c => (
             <Text style={styles.stat} key={c.stat.name}>
-              {c.stat.name.replace('-', ' ')}: {c.base_stat}
+              <Text style={{fontWeight: 'bold'}}>
+                {c.stat.name.replace('-', ' ')}
+              </Text>
+              : {c.base_stat}
             </Text>
           ))}
-          <Text style={styles.stat}>Height: {pokemon.height}</Text>
-          <Text style={styles.stat}>
-            Weight: {pokemon.weight}{' '}
-            <Text style={{textTransform: 'lowercase'}}>lbs</Text>
+          <Text style={styles.statHeight}>
+            Height: <Text style={{fontWeight: '400'}}>{pokemon.height} </Text>
+          </Text>
+          <Text style={styles.statHeight}>
+            Weight:<Text style={{fontWeight: '400'}}>{pokemon.weight} </Text>
+            <Text style={{fontWeight: '400', textTransform: 'lowercase'}}>
+              lbs
+            </Text>
           </Text>
         </View>
       </View>

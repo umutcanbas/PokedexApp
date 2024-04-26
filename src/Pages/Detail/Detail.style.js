@@ -58,6 +58,10 @@ export default StyleSheet.create({
     fontSize: 17,
     textTransform: 'capitalize',
   },
+  statHeight: {
+    fontWeight: 'bold',
+    fontSize:17
+  },
   name: {
     textTransform: 'uppercase',
     fontWeight: 'bold',
