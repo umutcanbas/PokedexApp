@@ -1,4 +1,20 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<img src='images/ss.png' height='400' /><img src='images/ss1.png' height='400' /><img src='images/ss2.png' height='400' />
+
+# Technology
+## React Native
+
+# Tools
+
+- React Navigation
+- Formik
+- React Native Modal
+
+## Features
+
+- Listing Pokemon characters fetched from an API.
+- Ability to navigate to the detail page of the clicked character.
+- Ability to search by the name of the character.
+
 
 # Getting Started
 
