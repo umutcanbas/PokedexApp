@@ -9,6 +9,7 @@
 - React Navigation
 - Formik
 - React Native Modal
+- Pokeapi
 
 ## Features
 
